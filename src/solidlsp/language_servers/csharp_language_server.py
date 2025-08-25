@@ -76,7 +76,7 @@ class CSharpLanguageServer(SolidLanguageServer):
         log_dir = Path(self.ls_resources_dir(solidlsp_settings)) / "logs"
         log_dir.mkdir(parents=True, exist_ok=True)
         # Build command
-        cmd = [csharp_ls_path]
+        cmd = [csharp_ls_path, "--logLevel=Trace"]
         if self.solution_or_project:
             logger.log(f"Found solution/project file: {self.solution_or_project}", logging.INFO)
         else:
